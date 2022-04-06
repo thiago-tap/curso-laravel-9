@@ -1,0 +1,16 @@
+Habilitar o WSL
+    dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
+    dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
+    wsl --set-default-version 2
+
+Executar o prompt dentro do container
+    docker-compose exec app bash
+    docker exec -it app bash
+
+Controllers
+    php artisan make:controller UserController (nome do controller)
+
+Migrations
+    php artisan migrate - rodar o metodo up de todas as Migrations
+    php artisan migrate:refresh - rodar primeiro o metodo down e depois o metodo up
+    php artisan migrate:fresh - deletar todas as tabelas e rodar as Migrations
